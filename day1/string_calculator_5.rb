@@ -8,8 +8,6 @@ module StringCalculator
       s=string.to_i
       if s < 0
         neg_array << s
-      elsif s > 1000
-        return 0
       else
         return s
       end
@@ -20,7 +18,7 @@ module StringCalculator
         if num < 0
           neg_array << elmt
         else
-          sum += num unless num > 1000
+          sum += num
         end
       end
     elsif string.include? "\n"
@@ -30,7 +28,7 @@ module StringCalculator
         if num < 0
           neg_array << elmt
         else
-          sum += num unless num > 1000
+          sum += num
         end
       end
     end

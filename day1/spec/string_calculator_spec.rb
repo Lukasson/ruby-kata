@@ -29,5 +29,9 @@ describe StringCalculator do
     expect(StringCalculator.add("-1, -5, -10")).to eq("Negatives not allowed. -1, -5, -10 are invalid")
   end
   
+  it "ignores numbers greater than 1000" do
+    expect(StringCalculator.add("4\n1001\n6")).to eq(10)
+  end
+  
   
 end
