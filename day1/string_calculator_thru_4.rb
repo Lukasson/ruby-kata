@@ -1,40 +1,36 @@
 module StringCalculator
   
   def self.add(string)
-    neg_array=[]
     if string.length==0
-      return 0
+      0
     elsif string.length==1
       s=string.to_i
       if s < 0
-        neg_array << s
+        return "Negatives not allowed."
       else
-        return s
+        s
       end
     elsif string.include? ","
       sum=0
       string.split(", ").each do |elmt|
         num=elmt.to_i
         if num < 0
-          neg_array << elmt
+          return "Negatives not allowed."
         else
           sum += num
         end
       end
+      sum
     elsif string.include? "\n"
       sum=0
       string.split("\n").each do |elmt|
         num=elmt.to_i
         if num < 0
-          neg_array << elmt
+          return "Negatives not allowed."
         else
           sum += num
         end
       end
-    end
-    if neg_array.length > 0
-      return "Negatives not allowed. " + neg_array.join(', ') + " are invalid"
-    else
       sum
     end
   end

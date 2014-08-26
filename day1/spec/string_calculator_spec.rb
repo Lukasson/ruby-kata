@@ -21,8 +21,12 @@ describe StringCalculator do
     expect(StringCalculator.add("4\n5\n6")).to eq(15)
   end
   
-  it "raises the error 'Negatives not allowed.' when passed a negative value" do
-    expect(StringCalculator.add("-4, 6")).to eq("Negatives not allowed.")
+  # it "raises the error 'Negatives not allowed.' when passed a negative value" do
+  #   expect(StringCalculator.add("-4, 6")).to eq("Negatives not allowed.")
+  # end
+  
+  it "if accumulates the negative numbers and returns them with the error message" do
+    expect(StringCalculator.add("-1, -5, -10")).to eq("Negatives not allowed. -1, -5, -10 are invalid")
   end
   
   
